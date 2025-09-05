@@ -121,6 +121,46 @@ validator my_validator {
 }
 ```
 
+## Configuration
+
+### Setting up Aiken Binary Path
+
+The plugin will automatically try to find your Aiken binary in the following order:
+
+1. **Environment Variable**: `AIKEN_BIN` (recommended for custom installations)
+2. **PATH**: Using `which aiken` command
+3. **Default Location**: `~/.aiken/bin/aiken` (standard installation path)
+
+#### Using Environment Variable
+
+If you have Aiken installed in a custom location, set the `AIKEN_BIN` environment variable:
+
+```bash
+# In your shell profile (.bashrc, .zshrc, etc.)
+export AIKEN_BIN="/path/to/your/aiken/binary"
+
+# Or set it per project in .env file
+AIKEN_BIN="/usr/local/bin/aiken"
+```
+
+#### For VS Code Users
+
+Add the environment variable to your VS Code settings:
+
+```json
+{
+  "terminal.integrated.env.osx": {
+    "AIKEN_BIN": "/path/to/your/aiken/binary"
+  },
+  "terminal.integrated.env.linux": {
+    "AIKEN_BIN": "/path/to/your/aiken/binary"
+  },
+  "terminal.integrated.env.windows": {
+    "AIKEN_BIN": "C:\\path\\to\\your\\aiken\\binary.exe"
+  }
+}
+```
+
 ## Troubleshooting
 
 ### "aiken command not found"
@@ -131,6 +171,10 @@ aiken --version
 ```
 
 If not installed, follow the [Aiken installation instructions](https://aiken-lang.org/installation-instructions).
+
+### Custom Aiken Installation
+
+If you installed Aiken in a custom location, make sure to set the `AIKEN_BIN` environment variable as described in the Configuration section above.
 
 ### Plugin not working in VS Code
 
