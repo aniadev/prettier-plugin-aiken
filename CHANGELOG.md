@@ -1,5 +1,11 @@
 # prettier-plugin-aiken
 
+## 0.2.1
+
+### Patch Changes
+
+- fix mjs to js
+
 ## 0.2.0
 
 ### Minor Changes

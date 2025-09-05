@@ -1,7 +1,7 @@
-import { spawnSync } from "node:child_process";
-import { existsSync } from "node:fs";
-import { join } from "node:path";
-import { homedir } from "node:os";
+const { spawnSync } = require("node:child_process");
+const { existsSync } = require("node:fs");
+const { join } = require("node:path");
+const { homedir } = require("node:os");
 
 function resolveAikenBin() {
   // 1. Check env
@@ -46,7 +46,7 @@ function formatWithAiken(text) {
   return result.stdout;
 }
 
-export const languages = [
+const languages = [
   {
     name: "Aiken",
     parsers: ["aiken"],
@@ -54,15 +54,21 @@ export const languages = [
   }
 ];
 
-export const parsers = {
+const parsers = {
   aiken: {
     parse: text => text,
     astFormat: "aiken-ast"
   }
 };
 
-export const printers = {
+const printers = {
   "aiken-ast": {
     print: path => formatWithAiken(path.getValue())
   }
+};
+
+module.exports = {
+  languages,
+  parsers,
+  printers
 };
