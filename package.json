@@ -1,5 +1,8 @@
 {
   "name": "prettier-plugin-aiken",
+  "publishConfig": {
+    "access": "public"
+  },
   "description": "A Prettier plugin for Aiken language",
   "publisher": "Aniadev",
   "author": {
@@ -8,12 +11,18 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/Aniadev/prettier-plugin-aiken.git"
+    "url": "https://github.com/aniadev/prettier-plugin-aiken.git"
   },
-  "version": "0.1.0",
+  "version": "0.1.1",
   "main": "index.js",
-  "keywords": ["prettier-plugin", "aiken"],
+  "keywords": [
+    "prettier-plugin",
+    "aiken"
+  ],
   "engines": {
     "node": ">=14"
+  },
+  "devDependencies": {
+    "@changesets/cli": "^2.28.1"
   }
 }
